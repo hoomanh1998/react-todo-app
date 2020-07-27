@@ -28,7 +28,7 @@ const InputTodo = () => {
             <h1 className="mb-5 text-center">Todo List</h1>
             <Form className="d-flex justify-content-center m-5" inline onSubmit={onSubmitForm}>
                 <Form.Control
-                    className="mr-2 w-50"
+                    className="mr-2 w-75"
                     type="text"
                     placeholder="Enter your todo..."
                     value={description}

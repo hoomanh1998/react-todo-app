@@ -65,44 +65,48 @@ const ListTodos = () => {
                 <Button className="mx-1" onClick={() => filterTodos(2)} variant="secondary">Not Completed</Button>
             </>
             {todos.length !== 0 ?
-                <Table 
-                className="my-5"
-                striped bordered style={{ fontSize: "1.2rem" }}>
-                    <thead>
-                        <tr>
-                            <th>Description</th>
-                            <th>Check</th>
-                            <th>Edit</th>
-                            <th>Delete</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {todos.map(todo => (
-                            <tr key={todo.t_id}>
-                                <td
-                                    className="w-80"
-                                    style={{ width: "80%", maxWidth: "100px", textOverflow: "ellipsis", overflow: "hidden", verticalAlign: "middle" }}>
-                                    {todo.t_description}
-                                </td>
-                                <td>
-                                    <input
-                                        onChange={() => toggleTodoHandler(todo.t_id)}
-                                        checked={todo.t_complete ? true : false}
-                                        style={{ width: "25px", height: "25px", cursor: "pointer", verticalAlign: "middle" }}
-                                        type="checkbox" />
-                                </td>
-                                <td style={{ width: "10%" }}>
-                                    <EditTodo todo={todo} />
-                                </td>
-                                <td style={{ width: "10%" }}>
-                                    <Button
-                                        variant="danger"
-                                        onClick={() => deleteTodo(todo.t_id)}>Delete</Button>
-                                </td>
+                <>
+                    <h5 className="my-5">There are {todos.length} todos.</h5>
+                    <Table
+                        striped bordered style={{ fontSize: "1.2rem" }}>
+                        <thead>
+                            <tr>
+                                <th>Description</th>
+                                <th>Check</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
                             </tr>
-                        ))}
-                    </tbody>
-                </Table>
+                        </thead>
+                        <tbody>
+                            {console.log(todos.length)}
+                            {todos.map(todo => (
+                                <tr key={todo.t_id}>
+                                    <td
+                                        className="w-80"
+                                        style={{ width: "80%", maxWidth: "100px", textOverflow: "ellipsis", overflow: "hidden", verticalAlign: "middle" }}>
+                                        {todo.t_description}
+                                    </td>
+                                    <td>
+                                        <input
+                                            onChange={() => toggleTodoHandler(todo.t_id)}
+                                            checked={todo.t_complete ? true : false}
+                                            style={{ width: "25px", height: "25px", cursor: "pointer", verticalAlign: "middle" }}
+                                            type="checkbox" />
+                                    </td>
+                                    <td style={{ width: "10%" }}>
+                                        <EditTodo todo={todo} />
+                                    </td>
+                                    <td style={{ width: "10%" }}>
+                                        <Button
+                                            variant="danger"
+                                            onClick={() => deleteTodo(todo.t_id)}>Delete</Button>
+                                    </td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </Table>
+                </>
+
                 : <h3>There is nothing to show</h3>}
         </>
     )
