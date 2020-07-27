@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
-import ButtonGroup from 'react-bootstrap/ButtonGroup';
+// import ButtonGroup from 'react-bootstrap/ButtonGroup';
 
 
 import EditTodo from './EditTodo';
@@ -59,13 +59,15 @@ const ListTodos = () => {
 
     return (
         <>
-            <ButtonGroup aria-label="Basic example" className="pb-5">
-                <Button onClick={() => filterTodos(0)} variant="secondary">All</Button>
-                <Button onClick={() => filterTodos(1)} variant="secondary">Completed</Button>
-                <Button onClick={() => filterTodos(2)} variant="secondary">Not Completed</Button>
-            </ButtonGroup>
+            <>
+                <Button className="mx-1" onClick={() => filterTodos(0)} variant="secondary">All</Button>
+                <Button className="mx-1" onClick={() => filterTodos(1)} variant="secondary">Completed</Button>
+                <Button className="mx-1" onClick={() => filterTodos(2)} variant="secondary">Not Completed</Button>
+            </>
             {todos.length !== 0 ?
-                <Table striped bordered style={{ fontSize: "1.1rem" }}>
+                <Table 
+                className="my-5"
+                striped bordered style={{ fontSize: "1.2rem" }}>
                     <thead>
                         <tr>
                             <th>Description</th>
