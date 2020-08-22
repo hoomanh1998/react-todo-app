@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
-// import ButtonGroup from 'react-bootstrap/ButtonGroup';
 
 
 import EditTodo from './EditTodo';
@@ -68,7 +67,7 @@ const ListTodos = () => {
                 <>
                     <h5 className="my-5">There are {todos.length} todos.</h5>
                     <Table
-                        striped bordered style={{ fontSize: "1.2rem" }}>
+                        striped bordered style={{ fontSize: "1.2rem" , backgroundColor:'white'} }>
                         <thead>
                             <tr>
                                 <th>Description</th>
