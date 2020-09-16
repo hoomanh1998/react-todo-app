@@ -81,7 +81,6 @@ const ListTodos = () => {
                             {todos.map(todo => (
                                 <tr key={todo.t_id}>
                                     <td
-                                        className="w-80"
                                         style={{ width: "80%", maxWidth: "100px", textOverflow: "ellipsis", overflow: "hidden", verticalAlign: "middle" }}>
                                         {todo.t_description}
                                     </td>
