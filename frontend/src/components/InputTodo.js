@@ -25,7 +25,7 @@ const InputTodo = () => {
 
     return (
         <>
-            <h1 className="mb-5 text-center">Todo List</h1>
+            <h1 className="mb-5 p-3 text-center">Todo List</h1>
             <Form className="d-flex justify-content-center m-5" inline onSubmit={onSubmitForm}>
                 <Form.Control
                     className="mr-2 w-75"
